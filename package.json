@@ -1,0 +1,8 @@
+{
+  "name": "MovieAPI",
+  "version": "1.0.0",
+  "scripts": {
+    "api": "cd api && node app.js",
+    "megamovies": "cd megamovies && flutter run"
+  }
+}
