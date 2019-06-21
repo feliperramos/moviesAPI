@@ -20,9 +20,18 @@ class _AppHomeState extends State<AppHome> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(centerTitle: true, title: Text('Movies')),
-      body: ListView.builder(
-          itemCount: _movies.length,
-          itemBuilder: (context, index) => MovieTile(_movies[index])));
+      body: Container(
+          child: ListView.builder(
+              itemCount: _movies.length,
+              itemBuilder: (context, index) => MovieTile(_movies[index]))),
+      bottomNavigationBar: Container(
+        child: TextField(
+            decoration: InputDecoration(
+                labelText: "Search",
+                hintText: "input a movie to search...",
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0))))),
+      ));
 
   void listenMovies() async {
     final Stream<Movies> stream = await getMovies();

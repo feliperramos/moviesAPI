@@ -3,8 +3,9 @@ import 'dart:convert';
 import '../model/movie.dart';
 
 Future<Stream<Movies>> getMovies() async {
-  final String url =
-      'http://192.168.15.14:5000/api/movie/count/?title=Spiderman';
+  var text = "Spiderman";
+  final String url = 'http://localhost:5000/api/movie/count/?title=' + text;
+  //Spiderman';
 
   final client = new http.Client();
 
